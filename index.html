@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StudyHive — CEE · IOE · NEET · JEE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,400&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="logo" onclick="showPage('home')">
+      <span class="logo-icon">⬡</span>
+      <span class="logo-text">StudyHive</span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#" onclick="showPage('home')" class="nav-link active" data-page="home">Home</a>
+      <a href="#" onclick="showPage('courses')" class="nav-link" data-page="courses">Courses</a>
+      <a href="#" onclick="showPage('materials')" class="nav-link" data-page="materials">Materials</a>
+      <a href="#" onclick="showPage('tests')" class="nav-link" data-page="tests">Tests</a>
+      <a href="#" onclick="showPage('leaderboard')" class="nav-link" data-page="leaderboard">Leaderboard</a>
+    </div>
+    <div class="nav-actions">
+      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">
+        <span class="sun-icon">☀</span>
+        <span class="moon-icon">◑</span>
+      </button>
+      <button class="btn-join" onclick="showPage('courses')">Start Free</button>
+      <button class="hamburger" onclick="toggleMenu()" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════════════════════════════ HOME PAGE ════════════════════════════════ -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+      <div class="shape shape-grid"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">🇳🇵 Built for Nepal's Top Exams</div>
+      <h1 class="hero-title">
+        Crack <em>CEE, IOE,</em><br>NEET &amp; JEE —<br>
+        <span class="hero-title-highlight">For Free.</span>
+      </h1>
+      <p class="hero-sub">Study smarter with curated notes, mock tests, and video lectures from top educators. Join 50,000+ aspirants already on StudyHive.</p>
+      <div class="hero-cta-row">
+        <button class="btn-primary" onclick="showPage('courses')">Browse Courses →</button>
+        <button class="btn-outline" onclick="showPage('tests')">Take a Free Test</button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><strong>50K+</strong><span>Students</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><strong>1200+</strong><span>Questions</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><strong>4 Exams</strong><span>Covered</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card-stack">
+        <div class="float-card fc-1">
+          <div class="fc-icon">⚗️</div>
+          <div class="fc-label">Chemistry<br><small>IOE 2024</small></div>
+          <div class="fc-score">98%</div>
+        </div>
+        <div class="float-card fc-2">
+          <div class="fc-icon">📐</div>
+          <div class="fc-label">Math<br><small>CEE Model</small></div>
+          <div class="fc-score">95%</div>
+        </div>
+        <div class="float-card fc-3">
+          <div class="fc-icon">🧬</div>
+          <div class="fc-label">Biology<br><small>NEET 2024</small></div>
+          <div class="fc-score">91%</div>
+        </div>
+        <div class="main-visual-card">
+          <div class="mvc-header">
+            <span class="mvc-dot red"></span>
+            <span class="mvc-dot yellow"></span>
+            <span class="mvc-dot green"></span>
+            <span class="mvc-title">Daily Practice</span>
+          </div>
+          <div class="mvc-question">
+            <div class="mvc-q-label">Q. 14 / Physics</div>
+            <p class="mvc-q-text">A particle moves in a circle of radius R. What is the displacement after half a revolution?</p>
+            <div class="mvc-options">
+              <div class="mvc-opt correct">A) 2R ✓</div>
+              <div class="mvc-opt">B) πR</div>
+              <div class="mvc-opt">C) R</div>
+              <div class="mvc-opt">D) 2πR</div>
+            </div>
+          </div>
+          <div class="mvc-progress">
+            <div class="mvc-prog-bar"><div class="mvc-prog-fill" style="width:70%"></div></div>
+            <span>70% complete</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXAM TABS -->
+  <section class="exam-section">
+    <div class="container">
+      <div class="section-tag">Choose Your Path</div>
+      <h2 class="section-title">Which exam are<br>you preparing for?</h2>
+      <div class="exam-grid">
+        <div class="exam-card" onclick="showPage('courses'); filterCourse('CEE')">
+          <div class="exam-card-bg ec-cee"></div>
+          <div class="exam-card-body">
+            <div class="exam-acronym">CEE</div>
+            <div class="exam-name">Common Entrance Examination</div>
+            <div class="exam-desc">Medical & Dental seats across Nepal. Physics, Chemistry, Biology + Math.</div>
+            <div class="exam-meta">
+              <span>📚 340 Notes</span>
+              <span>🧪 620 MCQs</span>
+            </div>
+            <div class="exam-cta">Explore →</div>
+          </div>
+        </div>
+        <div class="exam-card" onclick="showPage('courses'); filterCourse('IOE')">
+          <div class="exam-card-bg ec-ioe"></div>
+          <div class="exam-card-body">
+            <div class="exam-acronym">IOE</div>
+            <div class="exam-name">Institute of Engineering Entrance</div>
+            <div class="exam-desc">TU Engineering programs. Focus on Math, Physics, Chemistry & English.</div>
+            <div class="exam-meta">
+              <span>📚 290 Notes</span>
+              <span>🧪 540 MCQs</span>
+            </div>
+            <div class="exam-cta">Explore →</div>
+          </div>
+        </div>
+        <div class="exam-card" onclick="showPage('courses'); filterCourse('NEET')">
+          <div class="exam-card-bg ec-neet"></div>
+          <div class="exam-card-body">
+            <div class="exam-acronym">NEET</div>
+            <div class="exam-name">National Eligibility cum Entrance</div>
+            <div class="exam-desc">India's medical gateway. NCERT-based Biology, Physics & Chemistry.</div>
+            <div class="exam-meta">
+              <span>📚 410 Notes</span>
+              <span>🧪 720 MCQs</span>
+            </div>
+            <div class="exam-cta">Explore →</div>
+          </div>
+        </div>
+        <div class="exam-card" onclick="showPage('courses'); filterCourse('JEE')">
+          <div class="exam-card-bg ec-jee"></div>
+          <div class="exam-card-body">
+            <div class="exam-acronym">JEE</div>
+            <div class="exam-name">Joint Entrance Examination</div>
+            <div class="exam-desc">IIT / NIT Engineering. Advanced Math, Physics & Chemistry.</div>
+            <div class="exam-meta">
+              <span>📚 380 Notes</span>
+              <span>🧪 810 MCQs</span>
+            </div>
+            <div class="exam-cta">Explore →</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features-section">
+    <div class="container">
+      <div class="features-grid">
+        <div class="features-left">
+          <div class="section-tag">Why StudyHive?</div>
+          <h2 class="section-title">Everything you need.<br>Nothing you don't.</h2>
+          <p class="features-sub">Designed with Nepal's top exam toppers and educators. Our content maps to every syllabus change — you focus on learning.</p>
+          <button class="btn-primary" onclick="showPage('materials')">Browse Free Materials →</button>
+        </div>
+        <div class="features-right">
+          <div class="feature-item">
+            <div class="fi-icon" style="background:var(--accent-amber)">📝</div>
+            <div class="fi-body">
+              <h4>Chapter-wise Notes</h4>
+              <p>Concise, exam-focused notes. Download PDFs or read online — fully free.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="fi-icon" style="background:var(--accent-green)">⏱️</div>
+            <div class="fi-body">
+              <h4>Timed Mock Tests</h4>
+              <p>Simulate real exam pressure with adaptive difficulty and instant solutions.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="fi-icon" style="background:var(--accent-blue)">📊</div>
+            <div class="fi-body">
+              <h4>Performance Analytics</h4>
+              <p>Track weak chapters, accuracy rates, and time-per-question across sessions.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="fi-icon" style="background:var(--accent-rose)">🏆</div>
+            <div class="fi-body">
+              <h4>Leaderboards</h4>
+              <p>Compete with peers nationwide. Rank on weekly and monthly boards.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-tag">Student Stories</div>
+      <h2 class="section-title">Toppers trust StudyHive</h2>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p>"Cracked CEE 2024 rank 47 using only StudyHive materials. The chapter-wise MCQs are gold."</p>
+          <div class="testi-author">
+            <div class="testi-avatar ta-1">PK</div>
+            <div><strong>Priya Karki</strong><br><small>CEE 2024 · Rank 47</small></div>
+          </div>
+        </div>
+        <div class="testi-card testi-featured">
+          <div class="testi-stars">★★★★★</div>
+          <p>"IOE preparation was stressful until I found StudyHive. The mock tests mirror actual IOE patterns exactly. Got into Pulchowk!"</p>
+          <div class="testi-author">
+            <div class="testi-avatar ta-2">AS</div>
+            <div><strong>Aditya Shrestha</strong><br><small>IOE 2024 · Pulchowk Campus</small></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p>"NEET Biology notes are incredibly detailed. The mnemonics and diagrams helped me score 680+."</p>
+          <div class="testi-author">
+            <div class="testi-avatar ta-3">SM</div>
+            <div><strong>Shreya Manandhar</strong><br><small>NEET 2024 · 682/720</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="container">
+      <div class="cta-banner-inner">
+        <div class="cta-banner-text">
+          <h2>Ready to start your<br>exam journey?</h2>
+          <p>100% free. No credit card. No hidden fees.</p>
+        </div>
+        <div class="cta-banner-actions">
+          <button class="btn-primary" onclick="showPage('courses')">Get Started Free</button>
+          <button class="btn-outline-light" onclick="showPage('tests')">Try a Mock Test</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- end home page -->
+
+
+<!-- ════════════════════════════════ COURSES PAGE ════════════════════════════════ -->
+<div id="page-courses" class="page">
+  <div class="page-hero courses-hero">
+    <div class="container">
+      <div class="section-tag">All Courses</div>
+      <h1>Free Courses for<br>Every Exam</h1>
+      <p>Chapter-by-chapter, syllabus-aligned, educator-reviewed content.</p>
+    </div>
+  </div>
+  <div class="container page-content">
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterCourse('ALL')">All</button>
+      <button class="filter-btn" onclick="filterCourse('CEE')">CEE</button>
+      <button class="filter-btn" onclick="filterCourse('IOE')">IOE</button>
+      <button class="filter-btn" onclick="filterCourse('NEET')">NEET</button>
+      <button class="filter-btn" onclick="filterCourse('JEE')">JEE</button>
+    </div>
+    <div class="courses-grid" id="coursesGrid">
+      <!-- Injected by JS -->
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════ MATERIALS PAGE ════════════════════════════════ -->
+<div id="page-materials" class="page">
+  <div class="page-hero materials-hero">
+    <div class="container">
+      <div class="section-tag">Free Materials</div>
+      <h1>Notes, PDFs &<br>Past Papers</h1>
+      <p>Download and study. No login required.</p>
+    </div>
+  </div>
+  <div class="container page-content">
+    <div class="materials-search-row">
+      <input type="text" class="search-input" placeholder="Search notes, papers, chapters…" oninput="filterMaterials(this.value)">
+      <div class="mat-filter-row">
+        <button class="filter-btn active" onclick="matFilter('ALL')">All Types</button>
+        <button class="filter-btn" onclick="matFilter('notes')">Notes</button>
+        <button class="filter-btn" onclick="matFilter('paper')">Past Papers</button>
+        <button class="filter-btn" onclick="matFilter('formula')">Formula Sheets</button>
+      </div>
+    </div>
+    <div class="materials-grid" id="materialsGrid">
+      <!-- Injected by JS -->
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════ TESTS PAGE ════════════════════════════════ -->
+<div id="page-tests" class="page">
+  <div id="tests-landing">
+    <div class="page-hero tests-hero">
+      <div class="container">
+        <div class="section-tag">Mock Tests</div>
+        <h1>Simulate. Analyze.<br>Improve.</h1>
+        <p>Real exam pattern. Real timer. Real analytics.</p>
+      </div>
+    </div>
+    <div class="container page-content">
+      <div class="test-categories">
+        <div class="test-cat-card" onclick="startTest('CEE Full Mock')">
+          <div class="tc-badge tc-cee">CEE</div>
+          <h3>CEE Full Mock</h3>
+          <p>100 questions · 2 hrs · Physics, Chemistry, Biology, Math</p>
+          <div class="tc-meta"><span>🎯 2800 attempts</span><span>⭐ 4.8</span></div>
+          <button class="btn-start">Start Test →</button>
+        </div>
+        <div class="test-cat-card" onclick="startTest('IOE Full Mock')">
+          <div class="tc-badge tc-ioe">IOE</div>
+          <h3>IOE Full Mock</h3>
+          <p>100 questions · 2 hrs · Math, Physics, Chemistry, English</p>
+          <div class="tc-meta"><span>🎯 2100 attempts</span><span>⭐ 4.7</span></div>
+          <button class="btn-start">Start Test →</button>
+        </div>
+        <div class="test-cat-card" onclick="startTest('NEET Full Mock')">
+          <div class="tc-badge tc-neet">NEET</div>
+          <h3>NEET Full Mock</h3>
+          <p>180 questions · 3 hrs · Biology, Physics, Chemistry</p>
+          <div class="tc-meta"><span>🎯 3400 attempts</span><span>⭐ 4.9</span></div>
+          <button class="btn-start">Start Test →</button>
+        </div>
+        <div class="test-cat-card" onclick="startTest('JEE Mains Mock')">
+          <div class="tc-badge tc-jee">JEE</div>
+          <h3>JEE Mains Mock</h3>
+          <p>90 questions · 3 hrs · Math, Physics, Chemistry</p>
+          <div class="tc-meta"><span>🎯 1900 attempts</span><span>⭐ 4.6</span></div>
+          <button class="btn-start">Start Test →</button>
+        </div>
+        <div class="test-cat-card" onclick="startTest('Quick Physics')">
+          <div class="tc-badge tc-quick">QUICK</div>
+          <h3>Quick Physics</h3>
+          <p>20 questions · 20 min · Mixed exams</p>
+          <div class="tc-meta"><span>🎯 5600 attempts</span><span>⭐ 4.8</span></div>
+          <button class="btn-start">Start Test →</button>
+        </div>
+        <div class="test-cat-card" onclick="startTest('Quick Chemistry')">
+          <div class="tc-badge tc-quick">QUICK</div>
+          <h3>Quick Chemistry</h3>
+          <p>20 questions · 20 min · Mixed exams</p>
+          <div class="tc-meta"><span>🎯 4200 attempts</span><span>⭐ 4.7</span></div>
+          <button class="btn-start">Start Test →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUIZ PANEL -->
+  <div id="quiz-panel" style="display:none">
+    <div class="quiz-header">
+      <button class="quiz-back" onclick="exitQuiz()">← Exit Test</button>
+      <div class="quiz-title" id="quizTitle">Quiz</div>
+      <div class="quiz-timer" id="quizTimer">20:00</div>
+    </div>
+    <div class="quiz-body">
+      <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quizProgressFill"></div></div>
+      <div class="quiz-q-num" id="quizQNum">Question 1 of 10</div>
+      <div class="quiz-question" id="quizQuestion"></div>
+      <div class="quiz-options" id="quizOptions"></div>
+      <div class="quiz-nav">
+        <button class="btn-outline" id="btnPrev" onclick="quizNav(-1)">← Prev</button>
+        <button class="btn-primary" id="btnNext" onclick="quizNav(1)">Next →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESULT PANEL -->
+  <div id="result-panel" style="display:none">
+    <div class="container">
+      <div class="result-card">
+        <div class="result-icon" id="resultIcon">🎉</div>
+        <h2 id="resultTitle">Test Complete!</h2>
+        <div class="result-score" id="resultScore"></div>
+        <div class="result-breakdown" id="resultBreakdown"></div>
+        <div class="result-actions">
+          <button class="btn-primary" onclick="showPage('tests')">Try Another Test</button>
+          <button class="btn-outline" onclick="showPage('leaderboard')">View Leaderboard</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════ LEADERBOARD PAGE ════════════════════════════════ -->
+<div id="page-leaderboard" class="page">
+  <div class="page-hero lb-hero">
+    <div class="container">
+      <div class="section-tag">Rankings</div>
+      <h1>Weekly<br>Leaderboard</h1>
+      <p>Top performers across all exams. Updated every Sunday.</p>
+    </div>
+  </div>
+  <div class="container page-content">
+    <div class="lb-filter-row">
+      <button class="filter-btn active" onclick="lbFilter('ALL')">All Exams</button>
+      <button class="filter-btn" onclick="lbFilter('CEE')">CEE</button>
+      <button class="filter-btn" onclick="lbFilter('IOE')">IOE</button>
+      <button class="filter-btn" onclick="lbFilter('NEET')">NEET</button>
+      <button class="filter-btn" onclick="lbFilter('JEE')">JEE</button>
+    </div>
+    <div class="lb-podium">
+      <div class="podium-card podium-2">
+        <div class="podium-avatar pa-2">RS</div>
+        <div class="podium-name">Riya S.</div>
+        <div class="podium-score">2840 pts</div>
+        <div class="podium-rank rank-2">2</div>
+      </div>
+      <div class="podium-card podium-1">
+        <div class="podium-crown">👑</div>
+        <div class="podium-avatar pa-1">AK</div>
+        <div class="podium-name">Aarav K.</div>
+        <div class="podium-score">3120 pts</div>
+        <div class="podium-rank rank-1">1</div>
+      </div>
+      <div class="podium-card podium-3">
+        <div class="podium-avatar pa-3">NM</div>
+        <div class="podium-name">Nisha M.</div>
+        <div class="podium-score">2710 pts</div>
+        <div class="podium-rank rank-3">3</div>
+      </div>
+    </div>
+    <div class="lb-table">
+      <div class="lb-table-header">
+        <span>Rank</span><span>Student</span><span>Exam</span><span>Score</span><span>Accuracy</span>
+      </div>
+      <div id="lbTableBody"><!-- JS injected --></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ DEVELOPER CTA ════════════ -->
+<section class="dev-cta-section">
+  <div class="container">
+    <div class="dev-cta-grid">
+      <div class="dev-cta-info">
+        <div class="dev-tag">Developer Profile</div>
+        <h2 class="dev-heading">Architected by <br/><em>Sushant Raj Mishra</em></h2>
+        <p class="dev-text">Premium web engineering, dynamic interfaces, and scalable solutions built to deliver the ultimate user experience.</p>
+        <a href="https://sushantrm.com.np/" target="_blank" class="dev-btn">
+          <span>Connect with Developer</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="dev-cta-theme">
+        <div class="theme-panel">
+          <div class="tp-header">
+            <h3>Visual Mode</h3>
+            <p>Customize your viewing experience</p>
+          </div>
+          <div class="theme-switch-wrapper" onclick="toggleTheme()">
+            <div class="theme-icon-left">☀️</div>
+            <div class="theme-switch-track">
+              <div class="theme-switch-thumb"></div>
+            </div>
+            <div class="theme-icon-right">🌙</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo" onclick="showPage('home')">
+          <span class="logo-icon">⬡</span>
+          <span class="logo-text">StudyHive</span>
+        </a>
+        <p>Free quality education for every aspirant, everywhere in Nepal.</p>
+        <div class="footer-social">
+          <a href="#">FB</a><a href="#">YT</a><a href="#">TG</a><a href="#">IG</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Exams</h5>
+        <a href="#" onclick="showPage('courses'); filterCourse('CEE')">CEE</a>
+        <a href="#" onclick="showPage('courses'); filterCourse('IOE')">IOE</a>
+        <a href="#" onclick="showPage('courses'); filterCourse('NEET')">NEET</a>
+        <a href="#" onclick="showPage('courses'); filterCourse('JEE')">JEE</a>
+      </div>
+      <div class="footer-col">
+        <h5>Resources</h5>
+        <a href="#" onclick="showPage('materials')">Free Notes</a>
+        <a href="#" onclick="showPage('materials')">Past Papers</a>
+        <a href="#" onclick="showPage('tests')">Mock Tests</a>
+        <a href="#" onclick="showPage('leaderboard')">Leaderboard</a>
+      </div>
+      <div class="footer-col">
+        <h5>Platform</h5>
+        <a href="#">About Us</a>
+        <a href="#">Contact</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 StudyHive. Made with ❤️ for Nepal's exam aspirants. All materials free forever.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
